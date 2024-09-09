@@ -14,22 +14,22 @@ if __name__ == "__main__":
                 "source": "Data/DAS.xlsx",
                 "day": "20"
             },
-            # "FGTS": {
-            #     "source": "Data/FGTS.xlsx",
-            #     "day": "05"
-            # },
-            # "PIS": {
-            #     "source": "Data/PIS.xlsx",
-            #     "day": "10"
-            # },
-            # "COFINS": {
-            #     "source": "Data/COFINS.xlsx",
-            #     "day": "15"
-            # },
-            # "PARCELAMENTO": {
-            #     "source": "Data/PARCELAMENTO.xlsx",
-            #     "day": "20"
-            # }
+            "FGTS": {
+                "source": "Data/FGTS.xlsx",
+                "day": "05"
+            },
+            "PIS": {
+                "source": "Data/PIS.xlsx",
+                "day": "10"
+            },
+            "COFINS": {
+                "source": "Data/COFINS.xlsx",
+                "day": "15"
+            },
+            "PARCELAMENTO": {
+                "source": "Data/PARCELAMENTO.xlsx",
+                "day": "20"
+            }
         }
 
     for tax, info in tax_data_sources.items():
@@ -49,4 +49,4 @@ if __name__ == "__main__":
             notifier = WhatsAppNotifier(tax, info["source"])
             notifier.send_messages(info["day"])
         else:
-            print('Not today..')
+            print(f"{tax} will only be sent on day {tax_day}")
