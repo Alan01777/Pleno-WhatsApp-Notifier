@@ -8,7 +8,7 @@ if __name__ == "__main__":
         os.makedirs('Logs')
 
     logging.basicConfig(filename='Logs/logs.log', level=logging.INFO)
-
+    
     tax_data_sources = {
             "DAS": {
                 "source": "Data/DAS.xlsx",
@@ -37,8 +37,7 @@ if __name__ == "__main__":
         current_day = datetime.now().day
 
         # Gets the day the tax needs to be paid and substracts a number
-        tax_day = int(info["day"]) - 2
-
+        tax_day = max(1, int(info["day"]) - 2)
         # Check if the tax day falls on a weekend
         tax_date = datetime.now().replace(day=tax_day)
         if tax_date.weekday() > 4:  # 5 and 6 corresponds to Saturday and Sunday
