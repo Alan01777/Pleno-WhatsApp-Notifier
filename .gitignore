@@ -169,4 +169,4 @@ include
 /src/Logs/*
 
 # But don't ignore model_example.xlsx
-!/src/model_example.xlsx
+!/src/Data/model_example.xlsx
