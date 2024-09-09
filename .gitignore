@@ -170,3 +170,4 @@ include
 
 # But don't ignore model_example.xlsx
 !/src/Data/model_example.xlsx
+.venv
