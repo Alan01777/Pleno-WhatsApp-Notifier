@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Check if the virtual environment already exists
-if [ ! -d ".venv" ]
-then
+if [ ! -d ".venv" ]; then
     python3 -m venv .venv
 fi
 
@@ -10,8 +9,7 @@ fi
 source .venv/bin/activate
 
 # Check if activation was successful
-if [ $? -ne 0 ]
-then
+if [ $? -ne 0 ]; then
     echo "Failed to activate virtual environment"
     exit 1
 fi
@@ -20,8 +18,7 @@ fi
 pip install -r requirements.txt
 
 # Check if installation was successful
-if [ $? -ne 0 ]
-then
+if [ $? -ne 0 ]; then
     echo "Failed to install required packages"
     exit 1
 fi
@@ -30,8 +27,7 @@ fi
 cd src
 
 # Check if navigation was successful
-if [ $? -ne 0 ]
-then
+if [ $? -ne 0 ]; then
     echo "Failed to navigate to script directory"
     exit 1
 fi
@@ -40,8 +36,7 @@ fi
 python3 main.py
 
 # Check if script ran successfully
-if [ $? -ne 0 ]
-then
+if [ $? -ne 0 ]; then
     echo "Failed to run script"
     exit 1
 fi
