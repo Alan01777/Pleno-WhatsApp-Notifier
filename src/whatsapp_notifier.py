@@ -9,6 +9,7 @@ from datetime import datetime
 from dataExtractor import DataExtractor
 from env_vars import load_env_vars
 
+
 class WhatsAppNotifier:
     def __init__(self, imposto, data_source):
         load_dotenv('../.env')
@@ -24,7 +25,7 @@ class WhatsAppNotifier:
         extractor = DataExtractor(imposto=imposto, data_source=data_source)
         self.contacts_dict = extractor.extractor()
 
-    def send_messages(self, day):
+    def send_messages(self, day, month):
         for name, contact in self.contacts_dict.items():
             data = {
                 "messaging_product": "whatsapp",
@@ -50,8 +51,12 @@ class WhatsAppNotifier:
                                 },
                                 {
                                     "type": "text",
+                                    "text": month
+                                },
+                                {
+                                    "type": "text",
                                     "text": day
-                                }
+                                },
                             ]
                         }
                     ]

@@ -15,6 +15,9 @@ class DataExtractor:
         # Convert the 'TELEFONE' column to string
         df['TELEFONE'] = df['TELEFONE'].astype(str)
 
+        # Drop rows with empty 'EMPRESA' or 'TELEFONE' fields
+        df = df.dropna(subset=['EMPRESA', 'TELEFONE'])
+
         # Extract the 'EMPRESA' and 'TELEFONE' columns
         data = df[['EMPRESA', 'TELEFONE']]
 
