@@ -7,7 +7,7 @@ if __name__ == "__main__":
     if not os.path.exists('Logs'):
         os.makedirs('Logs')
 
-    logging.basicConfig(filename='Logs/logs.log', level=logging.INFO)
+    logging.basicConfig(filename='Logs/logs.log', datefmt='%Y-%m-%d;%H:%M:%S', level=logging.INFO)
 
     # List of month names in Portuguese
     month_names = ["de Janeiro", "de Fevereiro", " de Março", " de Abril", "de Maio", "de Junho", 
