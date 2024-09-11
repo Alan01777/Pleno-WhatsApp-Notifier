@@ -16,6 +16,7 @@ class WhatsAppNotifier:
         self.TOKEN = os.getenv("META_TOKEN")
         if not self.TOKEN:
             logging.warning("META_TOKEN not found in environment variables.")
+            exit()
         self.url = 'https://graph.facebook.com/v20.0/315409608315070/messages'
         self.headers = {
             'Authorization': 'Bearer ' + self.TOKEN,
